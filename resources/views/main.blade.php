@@ -50,7 +50,6 @@
         <p style="color: #c4c4c4; font-size: 12px; margin-bottom: 0;">Created and Designed by</p>
         <a href="http://mazeyar.nl"><img src="http://mazeyar.nl/images/logo.png" alt="Mazeyar Rezaei Ghavamabadi"></a>
     </div>
-
 </div>
 
 @include('partials._scripts')
