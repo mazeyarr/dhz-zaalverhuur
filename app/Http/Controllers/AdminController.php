@@ -20,4 +20,14 @@ class AdminController extends Controller
     {
         return view('auth.home');
     }
+
+    public function indexContracts()
+    {
+        return view('auth.contracts');
+    }
+
+    public function saveContract(Request $request)
+    {
+        dd($request);
+    }
 }

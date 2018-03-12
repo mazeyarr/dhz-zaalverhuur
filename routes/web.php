@@ -25,3 +25,6 @@ Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm
 Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
 Route::get('/admin', 'AdminController@index')->name('admin.home');
+
+Route::get('/admin/contracts', 'AdminController@indexContracts')->name('admin.contracts');
+Route::post('/admin/contracts/new', 'AdminController@saveContract')->name('admin.contracts.save');
