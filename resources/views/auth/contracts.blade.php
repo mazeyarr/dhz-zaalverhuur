@@ -13,6 +13,18 @@
 @endsection
 
 @section('content')
+    @if (count($errors))
+        <div class="row">
+        @foreach($errors->all() as $error)
+                <div class="col-md-12">
+                    <div class="alert alert-danger alert-dismissible">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                        <p>{{ $error }}</p>
+                    </div>
+                </div>
+        @endforeach
+        </div>
+    @endif
     <div class="row">
         <div class="col-md-12">
             <div class="box box-primary">
@@ -40,11 +52,11 @@
 
                         <div class="form-group">
                             <label style="margin-right: 5rem;">
-                                <input type="radio" name="business" class="flat-red optionBusiness" checked data-type="private">
+                                <input value="false" type="radio" name="business" class="flat-red optionBusiness" checked data-type="private">
                                 Particulier
                             </label>
                             <label>
-                                <input type="radio" name="business" class="flat-red optionBusiness" data-type="business">
+                                <input value="true" type="radio" name="business" class="flat-red optionBusiness" data-type="business">
                                 Bedrijf
                             </label>
                         </div>
@@ -54,15 +66,15 @@
                             <div class="form-group">
                                 <label for="name">Naam</label>
                                 {{--{!! Form::email('email', old('email'), ['id' => "email", 'class' => "form-control", 'placeholder' => "Email"]) !!}--}}
-                                {!! Form::text('name-representative', old('name-representative'), ['id' => "name-representative", 'class' => "form-control"]) !!}
+                                {!! Form::text('name_representative', old('name-representative'), ['id' => "name-representative", 'class' => "form-control"]) !!}
                             </div>
                             <div class="form-group">
                                 <label for="name">Adres</label>
-                                {!! Form::text('adres-representative', old('adres-representative'), ['id' => "adres-representative", 'class' => "form-control"]) !!}
+                                {!! Form::text('adres_representative', old('adres-representative'), ['id' => "adres-representative", 'class' => "form-control"]) !!}
                             </div>
                             <div class="form-group">
                                 <label for="name">Telefoonnummer</label>
-                                {!! Form::tel('phone-representative', old('phone-representative'), ['id' => "phone-representative", 'class' => "form-control"]) !!}
+                                {!! Form::tel('phone_representative', old('phone-representative'), ['id' => "phone-representative", 'class' => "form-control"]) !!}
                             </div>
                             <hr>
                         </div>
@@ -100,21 +112,21 @@
                         <label for="rent-room">Zaalverhuur</label>
                         <div class="input-group">
                             <span class="input-group-addon">&euro;</span>
-                            {!! Form::text('rent-room', 175, ['id' => "rent-room", 'class' => "form-control"]) !!}
+                            {!! Form::text('rent_room', 175, ['id' => "rent-room", 'class' => "form-control"]) !!}
                         </div>
                         <br>
 
                         <label for="rent-room">Beveiliging</label>
                         <div class="input-group">
                             <span class="input-group-addon">&euro;</span>
-                            {!! Form::text('rent-security', 190, ['id' => "rent-security", 'class' => "form-control"]) !!}
+                            {!! Form::text('rent_security', 190, ['id' => "rent-security", 'class' => "form-control"]) !!}
                         </div>
                         <hr>
 
                         <!-- checkbox -->
                         <div class="form-group">
                             <label>
-                                <input name="sound-system" type="checkbox" class="flat-red room-options">
+                                <input name="sound_system" type="checkbox" class="flat-red room-options">
                                 Geluidsinstallatie - 35 euro
                             </label><br>
                             <label>
@@ -122,11 +134,11 @@
                                 DJ (0-4) - 150 euro
                             </label><br>
                             <label>
-                                <input name="dj-hours" type="checkbox" class="flat-red room-options">
+                                <input name="dj_hours" type="checkbox" class="flat-red room-options">
                                 DJ elk extra uur - 30 euro
                             </label><br>
                             <label>
-                                <input name="pioneer-cd" type="checkbox" class="flat-red room-options">
+                                <input name="pioneer_cd" type="checkbox" class="flat-red room-options">
                                 Twee Pioneer CDJ-850 CD spelers met USB ingang - 40 euro
                             </label><br>
                             <label>
@@ -142,11 +154,11 @@
                                 Beamer + scherm - 25 euro
                             </label><br>
                             <label>
-                                <input name="standup-tables" type="checkbox" class="flat-red room-options">
+                                <input name="standup_tables" type="checkbox" class="flat-red room-options">
                                 Statafels - 10 euro
                             </label><br>
                             <label>
-                                <input name="stage-parts" type="checkbox" class="flat-red room-options">
+                                <input name="stage_parts" type="checkbox" class="flat-red room-options">
                                 Podiumdelen - 25 euro
                             </label><br>
                             <label>
@@ -159,14 +171,19 @@
                         <label for="rent-room">Afkoop munten</label>
                         <div class="input-group">
                             <span class="input-group-addon">&euro;</span>
-                            {!! Form::text('buyin-coins', "00,00", ['id' => "rent-security", 'class' => "form-control"]) !!}
+                            {!! Form::text('buyin_coins', "00,00", ['id' => "rent-security", 'class' => "form-control"]) !!}
+                        </div>
+                        <label for="rent-room">Munt prijs</label>
+                        <div class="input-group">
+                            <span class="input-group-addon">&euro;</span>
+                            {!! Form::number('coin_price', 2, ['id' => "coin_price", 'class' => "form-control"]) !!}
                         </div>
                         <br>
 
                         <label for="rent-room">Afkoop drank</label>
                         <div class="input-group">
                             <span class="input-group-addon">&euro;</span>
-                            {!! Form::text('buyin-liqour', "00,00", ['id' => "rent-security", 'class' => "form-control"]) !!}
+                            {!! Form::text('buyin_liqour', "00,00", ['id' => "rent-security", 'class' => "form-control"]) !!}
                         </div>
                         <br>
 
@@ -180,7 +197,7 @@
                         <label for="rent-room">Minimale baromzet</label>
                         <div class="input-group">
                             <span class="input-group-addon">&euro;</span>
-                            {!! Form::text('min-bar-revenue', "00,00", ['id' => "rent-security", 'class' => "form-control"]) !!}
+                            {!! Form::text('min_bar_revenue', "00,00", ['id' => "rent-security", 'class' => "form-control"]) !!}
                         </div>
 
                     </div>
@@ -238,7 +255,7 @@
                 "autoApply": true,
                 autoUpdateInput: true,
                 "locale": {
-                    "format": "MM/DD/YYYY HH:MM",
+                    "format": "DD/MM/YYYY HH:MM",
                     "separator": " - ",
                     "applyLabel": "Bevestigen",
                     "cancelLabel": "Annuleren",
@@ -279,7 +296,7 @@
                 "timePicker": true,
                 "timePicker24Hour": true,
                 "linkedCalendars": false,
-                "autoUpdateInput": false,
+                "autoUpdateInput": true,
             });
         })
     </script>

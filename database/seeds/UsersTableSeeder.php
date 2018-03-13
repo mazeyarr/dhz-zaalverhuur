@@ -17,5 +17,23 @@ class UsersTableSeeder extends Seeder
             'password' => bcrypt('mazeyar123'),
             'role' => 0,
         ]);
+        \App\User::create([
+            'name' => "Julia Swinkels",
+            'email' => "julia@zaalverhuur-amsterdam.nl",
+            'password' => bcrypt('juliaswinkels'),
+            'role' => 1,
+        ]);
+        \App\User::create([
+            'name' => "Charlotte Gordeau",
+            'email' => "charlotte@zaalverhuur-amsterdam.nl",
+            'password' => bcrypt('charlottegordeau'),
+            'role' => 1,
+        ]);
+        \App\User::create([
+            'name' => "Sanne de Ruiter",
+            'email' => "sanne@zaalverhuur-amsterdam.nl",
+            'password' => bcrypt('mazeyar123'),
+            'role' => 1,
+        ]);
     }
 }
