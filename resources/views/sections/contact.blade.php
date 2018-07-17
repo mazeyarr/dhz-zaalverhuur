@@ -5,7 +5,7 @@
                 <h2 class="section-heading">Kom in contact!</h2>
                 <hr class="my-4">
                 <p class="mb-5">U kunt ons bereiken via E-mail.</p>
-                <p class="mb-5">Of op werkdagen kunt u ons bereiken door te bellen tussen 11:00 en 17:00 uur.</p>
+                <p class="mb-5">Of op werkdagen kunt u ons bereiken door te bellen tussen 13:00 en 17:00 uur.</p>
             </div>
         </div>
         <div class="row">
