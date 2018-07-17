@@ -255,7 +255,7 @@
                 "autoApply": true,
                 autoUpdateInput: true,
                 "locale": {
-                    "format": "DD/MM/YYYY hh:mm",
+                    "format": "DD/MM/YYYY HH:mm",
                     "separator": " - ",
                     "applyLabel": "Bevestigen",
                     "cancelLabel": "Annuleren",
