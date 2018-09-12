@@ -127,7 +127,7 @@
                 <div class="entry-content">
                     <h3><strong>Zaalhuur</strong></h3>
                     <p>Vaste kosten<br/>
-                        €175,- Zaalhuur (voor 6 uur, inclusief personeel en schoonmaak)<br/>
+                        €200,- Zaalhuur (voor 6 uur, inclusief personeel en schoonmaak)<br/>
                         €250,- Borg
                     </p>
                     <p>Extra's<br/>
@@ -143,17 +143,17 @@
                         €25,- Podium
                     </p>
                     <h4><strong>Drankprijzen</strong></h4>
-                    <p>€2,00 Fris<br/>
-                        €2,00 Bier<br/>
-                        €2,20 Wijn<br/>
-                        €3,00 Gedestilleerd<br/>
-                        €3,50 Red Bull
+                    <p>€2,30 Fris<br/>
+                        €2,30 Bier<br/>
+                        €2,50 Wijn<br/>
+                        €3,30 Gedestilleerd<br/>
+                        €3,80 Red Bull
                     </p>
                     <h4><strong>Drankafkoop</strong></h4>
-                    <p>€25,- p.p. Bier | Fris<br/>
-                        €28,- p.p. Bier | Fris | Wijn<br/>
-                        €30,- p.p. Bier | Fris | Wijn | Binnenlands gedestilleerd<br/>
-                        €38,- p.p. Bier | Fris | Wijn | Binnen- en buitenlands gedestilleerd
+                    <p>€28,- p.p. Bier | Fris<br/>
+                        €21,- p.p. Bier | Fris | Wijn<br/>
+                        €33,- p.p. Bier | Fris | Wijn | Binnenlands gedestilleerd<br/>
+                        €40,- p.p. Bier | Fris | Wijn | Binnen- en buitenlands gedestilleerd
                     </p>
                     <p>De bargarantie is afhankelijk van de datum en het aantal personen. De zaalhuur is op doordeweekse
                         dagen en overdag lager. Neem voor meer informatie contact met ons op.
