@@ -21,19 +21,19 @@ class UsersTableSeeder extends Seeder
             'name' => "Julia Swinkels",
             'email' => "julia@zaalverhuur-amsterdam.nl",
             'password' => bcrypt('juliaswinkels'),
-            'role' => 1,
+            'role' => 4,
         ]);
         \App\User::create([
             'name' => "Charlotte Gordeau",
             'email' => "charlotte@zaalverhuur-amsterdam.nl",
             'password' => bcrypt('charlottegordeau'),
-            'role' => 1,
+            'role' => 5,
         ]);
         \App\User::create([
             'name' => "Sanne de Ruiter",
             'email' => "sanne@zaalverhuur-amsterdam.nl",
             'password' => bcrypt('mazeyar123'),
-            'role' => 1,
+            'role' => 2,
         ]);
     }
 }

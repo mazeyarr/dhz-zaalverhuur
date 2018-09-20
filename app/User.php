@@ -48,4 +48,43 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function contracts()
+    {
+        return $this->hasMany('App\Contract', 'user_id');
+    }
+
+    public function isAdmin()
+    {
+        return $this->transRole($this->role) === 'Admin' ? true : false;
+    }
+
+    public function transRole()
+    {
+        $role = 'unknown';
+        switch ($this->role) {
+            case 0:
+                $role = 'Admin';
+                break;
+            case 1:
+                $role = 'Praeses';
+                break;
+            case 2:
+                $role = 'Ab Actis';
+                break;
+            case 3:
+                $role = 'Questor';
+                break;
+            case 4:
+                $role = 'Voorzitter';
+                break;
+            case 5:
+                $role = 'Secretaris';
+                break;
+            case 6:
+                $role = 'Penningmeester';
+                break;
+        }
+        return $role;
+    }
 }

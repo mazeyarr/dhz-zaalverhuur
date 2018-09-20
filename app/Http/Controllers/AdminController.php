@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Validator;
@@ -29,6 +30,11 @@ class AdminController extends Controller
     public function indexContracts()
     {
         return view('auth.contracts');
+    }
+
+    public function indexUsers()
+    {
+        return view('auth.users')->withUsers(User::all());
     }
 
     public function saveContract(Request $request)

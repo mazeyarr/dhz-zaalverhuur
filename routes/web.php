@@ -24,7 +24,12 @@ Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail'
 Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
 Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
-Route::get('/admin', 'AdminController@index')->name('admin.home');
 
-Route::get('/admin/contracts', 'AdminController@indexContracts')->name('admin.contracts');
-Route::post('/admin/contracts/new', 'AdminController@saveContract')->name('admin.contracts.save');
+Route::name('admin.')->group(function () {
+    Route::get('/admin', 'AdminController@index')->name('home');
+
+    Route::get('/admin/contracts', 'AdminController@indexContracts')->name('contracts');
+    Route::post('/admin/contracts/new', 'AdminController@saveContract')->name('contracts.save');
+
+    Route::get('/admin/users', 'AdminController@indexUsers')->name('users');
+});
