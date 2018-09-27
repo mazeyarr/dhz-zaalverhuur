@@ -9,6 +9,8 @@
 <!-- AdminLTE App -->
 <script src="{{ asset('js/adminlte.min.js') }}"></script>
 
+<script src="{{ asset('js/app.js') }}"></script>
+
 @if(!App::isLocal())
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-96990724-4"></script>

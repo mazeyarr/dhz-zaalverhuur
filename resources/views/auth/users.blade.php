@@ -5,11 +5,6 @@
 @section('page-title', "Gebruikers")
 
 @section('style')
-    <!-- daterange picker -->
-    <link rel="stylesheet" href="{{ asset('bower_components/bootstrap-daterangepicker/daterangepicker.css') }}">
-    <link rel="stylesheet" href="{{ asset('plugins/timepicker/bootstrap-timepicker.min.css') }}">
-    <!-- iCheck for checkboxes and radio inputs -->
-    <link rel="stylesheet" href="{{ asset('plugins/iCheck/all.css') }}">
 @endsection
 
 @section('content')
@@ -39,27 +34,7 @@
                     <h3 class="box-title">Huidig Senaat</h3>
                 </div>
                 <!-- /.box-header -->
-                <div class="box-body table-responsive no-padding">
-                    <table class="table table-hover">
-                        <tr>
-                            <th>Gebruikersnaam</th>
-                            <th>Naam</th>
-                            <th>Functie</th>
-                            <th>Gemaakte Contracten</th>
-                        </tr>
-                        @foreach($users->where('created_at', '>', \Carbon\Carbon::createFromDate(date('Y'), 9, 1)) as $senateUser)
-                            @if($senateUser->isAdmin())
-                                @continue
-                            @endif
-                            <tr>
-                                <td>{{ $senateUser->email }}</td>
-                                <td>{{ $senateUser->name }}</td>
-                                <td>{{ $senateUser->transRole($senateUser->role) }}</td>
-                                <td><span class="label label-success">{{ $senateUser->contracts()->get()->count() }}</span></td>
-                            </tr>
-                        @endforeach
-                    </table>
-                </div>
+                <user-table></user-table>
                 <!-- /.box-body -->
             </div>
         </div>
@@ -131,13 +106,4 @@
 @endsection
 
 @section('script')
-    <!-- date-range-picker -->
-    <script src="{{ asset('bower_components/moment/min/moment.min.js') }}"></script>
-    <!-- bootstrap time picker -->
-    <script src="{{ asset('plugins/timepicker/bootstrap-timepicker.min.js') }}"></script>
-    <script src="{{ asset('bower_components/bootstrap-daterangepicker/daterangepicker.js') }}"></script>
-    <!-- bootstrap datepicker -->
-    <script src="{{ asset('bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js') }}"></script>
-    <!-- iCheck 1.0.1 -->
-    <script src="{{ asset('plugins/iCheck/icheck.min.js') }}"></script>
 @endsection
