@@ -1,5 +1,4 @@
-<!-- jQuery 3 -->
-<script src="{{ asset('bower_components/jquery/dist/jquery.min.js') }}"></script>
+<script src="{{ asset('js/app.js') }}"></script>
 <!-- Bootstrap 3.3.7 -->
 <script src="{{ asset('bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
 <!-- SlimScroll -->
@@ -9,7 +8,7 @@
 <!-- AdminLTE App -->
 <script src="{{ asset('js/adminlte.min.js') }}"></script>
 
-<script src="{{ asset('js/app.js') }}"></script>
+
 
 @if(!App::isLocal())
     <!-- Global site tag (gtag.js) - Google Analytics -->

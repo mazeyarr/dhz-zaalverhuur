@@ -11,8 +11,11 @@
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu" data-widget="tree">
             <li class="header">HOOFDMENU</li>
+            <li><a href="{{ route('admin.user.account', auth()->id()) }}"><i class="fa fa-user"></i> <span>Mijn profiel</span></a></li>
             <li><a href="{{ route('admin.contracts') }}"><i class="fa fa-book"></i> <span>Contracten</span></a></li>
-            <li><a href="{{ route('admin.users') }}"><i class="fa fa-book"></i> <span>Gebruikers</span></a></li>
+            <li><a href="{{ route('admin.users') }}"><i class="fa fa-group"></i> <span>Gebruikers</span></a></li>
+            <li class="header">ANDERS</li>
+            <li><a href="{{ route('admin.user.logout',  auth()->id()) }}"><i class="fa fa-sign-out text-red"></i> <span>Log uit</span></a></li>
             {{--<li class="header">LABELS</li>
             <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
             <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>

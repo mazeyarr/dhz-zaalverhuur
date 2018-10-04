@@ -15,8 +15,15 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('user-table', require('./components/_users/UserTable.vue'));
-Vue.component('user-row', require('./components/_users/UserRow.vue'));
+import Vue from 'vue';
+import VueSweetalert2 from 'vue-sweetalert2';
+
+Vue.use(VueSweetalert2);
+
+Vue.component('table-users', require('./components/_users/UserTable'));
+Vue.component('trow-user', require('./components/_users/UserRow'));
+Vue.component('button-add-user', require('./components/_users/AddUser'));
+Vue.component('loader', require('./components/Loader.vue'));
 
 const app = new Vue({
     el: '#app'

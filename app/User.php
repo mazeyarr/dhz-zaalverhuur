@@ -46,7 +46,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password', 'remember_token', // DEFAULT PASSWORD = deheiligezeug%%
     ];
 
     public function contracts()

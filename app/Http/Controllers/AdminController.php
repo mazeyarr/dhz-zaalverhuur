@@ -9,6 +9,7 @@ use Validator;
 use App\Contract;
 use Auth;
 use PDF;
+use Hash;
 
 class AdminController extends Controller
 {
@@ -35,6 +36,48 @@ class AdminController extends Controller
     public function indexUsers()
     {
         return view('auth.users')->withUsers(User::all());
+    }
+
+    public function indexUserAccount()
+    {
+        $user = User::find(Auth::user()->id);
+        $user->contracts = $user->contracts()->get()->count();
+        $user->role = $user->transRole();
+        return view('auth.profile')->withUser($user);
+    }
+
+    public function updateUserPassword(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'old_password' => 'required',
+            'new_password' => 'required',
+            'rep_password' => 'required|same:new_password'
+        ],[
+            'old_password.required' => 'Oud wachtwoord niet ingevoerd, geef mij op zn minst de kans om je te valideren feut',
+            'new_password.required' => 'Geef wel een nieuw wachtwoord op...',
+            'rep_password.required' => 'Voer het wachtwoord nogmaals in, weet niet zeker of je het gaat onthouden',
+            'rep_password.same' => 'Wachtwoorden zijn niet gelijk aan elkaar, kan jij wel typen??',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator->getMessageBag()->first());
+        }
+
+        $user = User::find(auth()->user()->id);
+        if (Hash::check($request->old_password, $user->password)) {
+            $user->password = Hash::make($request->new_password);
+        } else {
+            return redirect()->back()->withErrors("Wachtwoord was incorrect!");
+        }
+        $user->save();
+
+        return redirect()->route('admin.user.account', auth()->user()->id)->withSuccess('Profiel opgeslagen!');
+    }
+
+    public function logoutUser()
+    {
+        Auth::logout();
+        return redirect()->route('login')->withSuccess('logged out!');
     }
 
     public function saveContract(Request $request)
