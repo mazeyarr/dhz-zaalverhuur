@@ -151,7 +151,7 @@
                     </p>
                     <h4><strong>Drankafkoop</strong></h4>
                     <p>€28,- p.p. Bier | Fris<br/>
-                        €21,- p.p. Bier | Fris | Wijn<br/>
+                        €31,- p.p. Bier | Fris | Wijn<br/>
                         €33,- p.p. Bier | Fris | Wijn | Binnenlands gedestilleerd<br/>
                         €40,- p.p. Bier | Fris | Wijn | Binnen- en buitenlands gedestilleerd
                     </p>
