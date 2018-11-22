@@ -11,7 +11,7 @@ class ApiController extends Controller
 {
     public function getFetchUsers()
     {
-        $users = User::with('contracts')->where('role', '!=', 0)->get();
+        $users = User::with('contracts')->where('role', '!=', 0)->orderBy('created_at', 'desc')->get();
 
         foreach ($users as $user) {
             $user->role = $user->transRole();
